@@ -1,0 +1,1413 @@
+{
+  "input_table_shape": [
+    597,
+    137
+  ],
+  "metadata_column_count": 3,
+  "numeric_feature_column_count": 134,
+  "non_numeric_feature_columns": [],
+  "songs_per_decade": {
+    "1980s": 200,
+    "2000s": 200,
+    "2020s": 197
+  },
+  "missing_values_total": 0,
+  "missing_values_by_column": {
+    "song_name": 0,
+    "artist_name": 0,
+    "decade": 0,
+    "word_count": 0,
+    "unique_word_count": 0,
+    "char_count": 0,
+    "line_count": 0,
+    "avg_words_per_line": 0,
+    "median_words_per_line": 0,
+    "max_words_per_line": 0,
+    "min_words_per_line": 0,
+    "avg_word_length": 0,
+    "lexical_diversity": 0,
+    "repetition_ratio": 0,
+    "punctuation_count": 0,
+    "punctuation_ratio": 0,
+    "question_mark_count": 0,
+    "exclamation_mark_count": 0,
+    "comma_count": 0,
+    "quote_count": 0,
+    "parenthesis_count": 0,
+    "digit_count": 0,
+    "english_char_count": 0,
+    "english_char_ratio": 0,
+    "repeated_lines_count": 0,
+    "repeated_lines_ratio": 0,
+    "unique_lines_count": 0,
+    "most_repeated_line_count": 0,
+    "chorus_repetition_score": 0,
+    "repeated_words_count": 0,
+    "repeated_words_ratio": 0,
+    "most_common_word_count": 0,
+    "most_common_word_ratio": 0,
+    "first_person_singular_count": 0,
+    "first_person_singular_ratio": 0,
+    "first_person_plural_count": 0,
+    "first_person_plural_ratio": 0,
+    "second_person_count": 0,
+    "second_person_ratio": 0,
+    "third_person_count": 0,
+    "third_person_ratio": 0,
+    "we_vs_i_ratio": 0,
+    "direct_address_score": 0,
+    "love_words_ratio": 0,
+    "army_words_ratio": 0,
+    "nature_words_ratio": 0,
+    "religion_words_ratio": 0,
+    "party_words_ratio": 0,
+    "sadness_words_ratio": 0,
+    "nostalgia_words_ratio": 0,
+    "family_words_ratio": 0,
+    "place_words_ratio": 0,
+    "time_words_ratio": 0,
+    "modern_slang_words_ratio": 0,
+    "old_israeli_words_ratio": 0,
+    "last_word_unique_count": 0,
+    "last_word_repetition_ratio": 0,
+    "avg_last_word_length": 0,
+    "dicta_token_count": 0,
+    "dicta_non_punct_token_count": 0,
+    "dicta_content_token_count": 0,
+    "lemma_count": 0,
+    "unique_lemma_count": 0,
+    "lemma_diversity": 0,
+    "root_count": 0,
+    "unique_root_count": 0,
+    "root_diversity": 0,
+    "dicta_unknown_token_count": 0,
+    "dicta_unknown_token_ratio": 0,
+    "dicta_x_pos_count": 0,
+    "dicta_x_pos_ratio": 0,
+    "pos_noun_count": 0,
+    "pos_noun_ratio": 0,
+    "pos_verb_count": 0,
+    "pos_verb_ratio": 0,
+    "pos_adj_count": 0,
+    "pos_adj_ratio": 0,
+    "pos_adv_count": 0,
+    "pos_adv_ratio": 0,
+    "pos_pron_count": 0,
+    "pos_pron_ratio": 0,
+    "pos_propn_count": 0,
+    "pos_propn_ratio": 0,
+    "pos_adp_count": 0,
+    "pos_adp_ratio": 0,
+    "pos_det_count": 0,
+    "pos_det_ratio": 0,
+    "pos_cconj_count": 0,
+    "pos_cconj_ratio": 0,
+    "pos_sconj_count": 0,
+    "pos_sconj_ratio": 0,
+    "pos_aux_count": 0,
+    "pos_aux_ratio": 0,
+    "pos_num_count": 0,
+    "pos_num_ratio": 0,
+    "pos_intj_count": 0,
+    "pos_intj_ratio": 0,
+    "tense_past_count": 0,
+    "tense_past_ratio": 0,
+    "tense_present_count": 0,
+    "tense_present_ratio": 0,
+    "tense_future_count": 0,
+    "tense_future_ratio": 0,
+    "verb_inf_count": 0,
+    "verb_inf_ratio": 0,
+    "verb_participle_count": 0,
+    "verb_participle_ratio": 0,
+    "imperative_count": 0,
+    "imperative_ratio": 0,
+    "masculine_count": 0,
+    "masculine_ratio": 0,
+    "feminine_count": 0,
+    "feminine_ratio": 0,
+    "singular_count": 0,
+    "singular_ratio": 0,
+    "plural_count": 0,
+    "plural_ratio": 0,
+    "first_person_morph_count": 0,
+    "first_person_morph_ratio": 0,
+    "second_person_morph_count": 0,
+    "second_person_morph_ratio": 0,
+    "third_person_morph_count": 0,
+    "third_person_morph_ratio": 0,
+    "binyan_paal_count": 0,
+    "binyan_paal_ratio": 0,
+    "binyan_piel_count": 0,
+    "binyan_piel_ratio": 0,
+    "binyan_hifil_count": 0,
+    "binyan_hifil_ratio": 0,
+    "binyan_hitpael_count": 0,
+    "binyan_hitpael_ratio": 0,
+    "binyan_nifal_count": 0,
+    "binyan_nifal_ratio": 0,
+    "binyan_pual_count": 0,
+    "binyan_pual_ratio": 0,
+    "binyan_hufal_count": 0,
+    "binyan_hufal_ratio": 0
+  },
+  "infinite_values_total": 0,
+  "infinite_values_by_column": {},
+  "constant_columns": [
+    "tense_present_count",
+    "tense_present_ratio"
+  ],
+  "near_constant_columns": [
+    {
+      "column": "tense_present_count",
+      "dominant_value": 0.0,
+      "dominant_ratio": 1.0
+    },
+    {
+      "column": "tense_present_ratio",
+      "dominant_value": 0.0,
+      "dominant_ratio": 1.0
+    },
+    {
+      "column": "old_israeli_words_ratio",
+      "dominant_value": 0.0,
+      "dominant_ratio": 0.9899497487437185
+    }
+  ],
+  "all_zero_columns": [
+    "tense_present_count",
+    "tense_present_ratio"
+  ],
+  "suspicious_high_max_columns": [
+    {
+      "column": "char_count",
+      "max_value": 2880.0,
+      "tukey_threshold": 2015.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_token_count",
+      "max_value": 1001.0,
+      "tukey_threshold": 580.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_non_punct_token_count",
+      "max_value": 847.0,
+      "tukey_threshold": 555.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "english_char_count",
+      "max_value": 826.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "lemma_count",
+      "max_value": 695.0,
+      "tukey_threshold": 532.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "word_count",
+      "max_value": 559.0,
+      "tukey_threshold": 403.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_content_token_count",
+      "max_value": 408.0,
+      "tukey_threshold": 266.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "masculine_count",
+      "max_value": 329.0,
+      "tukey_threshold": 218.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "unique_word_count",
+      "max_value": 328.0,
+      "tukey_threshold": 206.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "singular_count",
+      "max_value": 304.0,
+      "tukey_threshold": 227.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "unique_lemma_count",
+      "max_value": 282.0,
+      "tukey_threshold": 178.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_unknown_token_count",
+      "max_value": 276.0,
+      "tukey_threshold": 41.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_x_pos_count",
+      "max_value": 276.0,
+      "tukey_threshold": 33.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "punctuation_count",
+      "max_value": 244.0,
+      "tukey_threshold": 64.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "third_person_morph_count",
+      "max_value": 183.0,
+      "tukey_threshold": 92.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "feminine_count",
+      "max_value": 164.0,
+      "tukey_threshold": 129.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_noun_count",
+      "max_value": 163.0,
+      "tukey_threshold": 108.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_pron_count",
+      "max_value": 148.0,
+      "tukey_threshold": 90.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_propn_count",
+      "max_value": 143.0,
+      "tukey_threshold": 12.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_adp_count",
+      "max_value": 138.0,
+      "tukey_threshold": 97.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "parenthesis_count",
+      "max_value": 126.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_det_count",
+      "max_value": 125.0,
+      "tukey_threshold": 54.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "plural_count",
+      "max_value": 116.0,
+      "tukey_threshold": 64.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_verb_count",
+      "max_value": 106.0,
+      "tukey_threshold": 96.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "root_count",
+      "max_value": 102.0,
+      "tukey_threshold": 95.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "third_person_count",
+      "max_value": 100.0,
+      "tukey_threshold": 16.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "first_person_morph_count",
+      "max_value": 100.0,
+      "tukey_threshold": 92.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "most_common_word_count",
+      "max_value": 98.0,
+      "tukey_threshold": 29.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "second_person_morph_count",
+      "max_value": 96.0,
+      "tukey_threshold": 85.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "line_count",
+      "max_value": 93.0,
+      "tukey_threshold": 86.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "unique_lines_count",
+      "max_value": 82.0,
+      "tukey_threshold": 63.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "tense_future_count",
+      "max_value": 80.0,
+      "tukey_threshold": 30.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_paal_count",
+      "max_value": 79.0,
+      "tukey_threshold": 60.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "last_word_unique_count",
+      "max_value": 78.0,
+      "tukey_threshold": 57.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "comma_count",
+      "max_value": 77.0,
+      "tukey_threshold": 32.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "second_person_count",
+      "max_value": 72.0,
+      "tukey_threshold": 30.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "tense_past_count",
+      "max_value": 69.0,
+      "tukey_threshold": 30.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "unique_root_count",
+      "max_value": 64.0,
+      "tukey_threshold": 49.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "verb_participle_count",
+      "max_value": 62.0,
+      "tukey_threshold": 47.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "first_person_singular_count",
+      "max_value": 42.0,
+      "tukey_threshold": 38.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_adj_count",
+      "max_value": 41.0,
+      "tukey_threshold": 28.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "repeated_lines_count",
+      "max_value": 38.0,
+      "tukey_threshold": 33.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "exclamation_mark_count",
+      "max_value": 36.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "verb_inf_count",
+      "max_value": 33.0,
+      "tukey_threshold": 21.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hifil_count",
+      "max_value": 32.0,
+      "tukey_threshold": 17.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "max_words_per_line",
+      "max_value": 31.0,
+      "tukey_threshold": 18.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_sconj_count",
+      "max_value": 31.0,
+      "tukey_threshold": 26.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "imperative_count",
+      "max_value": 30.0,
+      "tukey_threshold": 8.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "digit_count",
+      "max_value": 29.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_num_count",
+      "max_value": 29.0,
+      "tukey_threshold": 8.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "median_words_per_line",
+      "max_value": 28.0,
+      "tukey_threshold": 8.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "quote_count",
+      "max_value": 25.0,
+      "tukey_threshold": 4.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_aux_count",
+      "max_value": 25.0,
+      "tukey_threshold": 12.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_intj_count",
+      "max_value": 25.0,
+      "tukey_threshold": 4.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "avg_words_per_line",
+      "max_value": 24.33333333333333,
+      "tukey_threshold": 9.113636363636363,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "question_mark_count",
+      "max_value": 24.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_piel_count",
+      "max_value": 22.0,
+      "tukey_threshold": 17.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hitpael_count",
+      "max_value": 20.0,
+      "tukey_threshold": 12.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "first_person_plural_count",
+      "max_value": 18.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_nifal_count",
+      "max_value": 18.0,
+      "tukey_threshold": 12.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "min_words_per_line",
+      "max_value": 16.0,
+      "tukey_threshold": 6.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "most_repeated_line_count",
+      "max_value": 15.0,
+      "tukey_threshold": 6.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_pual_count",
+      "max_value": 8.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "avg_last_word_length",
+      "max_value": 7.319148936170213,
+      "tukey_threshold": 6.465800865800866,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "we_vs_i_ratio",
+      "max_value": 7.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hufal_count",
+      "max_value": 4.0,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_unknown_token_ratio",
+      "max_value": 1.0,
+      "tukey_threshold": 0.1892233573649501,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "dicta_x_pos_ratio",
+      "max_value": 1.0,
+      "tukey_threshold": 0.1771936895439887,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "tense_future_ratio",
+      "max_value": 0.9166666666666666,
+      "tukey_threshold": 0.8999999999999999,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "verb_inf_ratio",
+      "max_value": 0.8333333333333334,
+      "tukey_threshold": 0.5732031943212066,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "english_char_ratio",
+      "max_value": 0.7562437562437563,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "most_common_word_ratio",
+      "max_value": 0.6333333333333333,
+      "tukey_threshold": 0.1782431052093974,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "feminine_ratio",
+      "max_value": 0.625,
+      "tukey_threshold": 0.543046357615894,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "imperative_ratio",
+      "max_value": 0.5625,
+      "tukey_threshold": 0.2,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_nifal_ratio",
+      "max_value": 0.5454545454545454,
+      "tukey_threshold": 0.3478260869565216,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hifil_ratio",
+      "max_value": 0.5423728813559322,
+      "tukey_threshold": 0.4945652173913044,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_piel_ratio",
+      "max_value": 0.5,
+      "tukey_threshold": 0.4674099485420241,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_adv_ratio",
+      "max_value": 0.4507042253521127,
+      "tukey_threshold": 0.2899771092217134,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hitpael_ratio",
+      "max_value": 0.4444444444444444,
+      "tukey_threshold": 0.32258064516129,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_verb_ratio",
+      "max_value": 0.4090909090909091,
+      "tukey_threshold": 0.3482123029091715,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_adp_ratio",
+      "max_value": 0.358695652173913,
+      "tukey_threshold": 0.3433644681054546,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "third_person_ratio",
+      "max_value": 0.273224043715847,
+      "tukey_threshold": 0.1224489795918364,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "second_person_ratio",
+      "max_value": 0.23841059602649,
+      "tukey_threshold": 0.2058176898359543,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_adj_ratio",
+      "max_value": 0.2303030303030303,
+      "tukey_threshold": 0.1392616483326613,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_cconj_ratio",
+      "max_value": 0.1834319526627219,
+      "tukey_threshold": 0.1708333333333333,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_pual_ratio",
+      "max_value": 0.1818181818181818,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "time_words_ratio",
+      "max_value": 0.1805555555555555,
+      "tukey_threshold": 0.1359195402298849,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_propn_ratio",
+      "max_value": 0.1688311688311688,
+      "tukey_threshold": 0.0620155038759688,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "binyan_hufal_ratio",
+      "max_value": 0.16,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_sconj_ratio",
+      "max_value": 0.1538461538461538,
+      "tukey_threshold": 0.1204964372930116,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_aux_ratio",
+      "max_value": 0.1428571428571428,
+      "tukey_threshold": 0.0659340659340656,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "party_words_ratio",
+      "max_value": 0.1333333333333333,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "place_words_ratio",
+      "max_value": 0.1282051282051282,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "punctuation_ratio",
+      "max_value": 0.1187122736418511,
+      "tukey_threshold": 0.09754326266926,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_num_ratio",
+      "max_value": 0.1156462585034013,
+      "tukey_threshold": 0.044817927170868,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "family_words_ratio",
+      "max_value": 0.1111111111111111,
+      "tukey_threshold": 0.0547945205479452,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "love_words_ratio",
+      "max_value": 0.0985915492957746,
+      "tukey_threshold": 0.0218579234972676,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "pos_intj_ratio",
+      "max_value": 0.0912408759124087,
+      "tukey_threshold": 0.0224719101123592,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "sadness_words_ratio",
+      "max_value": 0.088235294117647,
+      "tukey_threshold": 0.0243902439024388,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "nature_words_ratio",
+      "max_value": 0.0793650793650793,
+      "tukey_threshold": 0.0277777777777776,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "first_person_plural_ratio",
+      "max_value": 0.0666666666666666,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "nostalgia_words_ratio",
+      "max_value": 0.0583333333333333,
+      "tukey_threshold": 0.0235294117647056,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "modern_slang_words_ratio",
+      "max_value": 0.0561797752808988,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "religion_words_ratio",
+      "max_value": 0.0508474576271186,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "old_israeli_words_ratio",
+      "max_value": 0.0215827338129496,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    },
+    {
+      "column": "army_words_ratio",
+      "max_value": 0.0198019801980198,
+      "tukey_threshold": 0.0,
+      "reasons": [
+        "max is above Q3 + 3*IQR"
+      ]
+    }
+  ],
+  "dicta_column_groups": {
+    "dicta_prefix_columns": [
+      "dicta_token_count",
+      "dicta_non_punct_token_count",
+      "dicta_content_token_count",
+      "dicta_unknown_token_count",
+      "dicta_unknown_token_ratio",
+      "dicta_x_pos_count",
+      "dicta_x_pos_ratio"
+    ],
+    "pos_prefix_columns": [
+      "pos_noun_count",
+      "pos_noun_ratio",
+      "pos_verb_count",
+      "pos_verb_ratio",
+      "pos_adj_count",
+      "pos_adj_ratio",
+      "pos_adv_count",
+      "pos_adv_ratio",
+      "pos_pron_count",
+      "pos_pron_ratio",
+      "pos_propn_count",
+      "pos_propn_ratio",
+      "pos_adp_count",
+      "pos_adp_ratio",
+      "pos_det_count",
+      "pos_det_ratio",
+      "pos_cconj_count",
+      "pos_cconj_ratio",
+      "pos_sconj_count",
+      "pos_sconj_ratio",
+      "pos_aux_count",
+      "pos_aux_ratio",
+      "pos_num_count",
+      "pos_num_ratio",
+      "pos_intj_count",
+      "pos_intj_ratio"
+    ],
+    "tense_prefix_columns": [
+      "tense_past_count",
+      "tense_past_ratio",
+      "tense_present_count",
+      "tense_present_ratio",
+      "tense_future_count",
+      "tense_future_ratio"
+    ],
+    "verb_prefix_columns": [
+      "verb_inf_count",
+      "verb_inf_ratio",
+      "verb_participle_count",
+      "verb_participle_ratio"
+    ],
+    "binyan_prefix_columns": [
+      "binyan_paal_count",
+      "binyan_paal_ratio",
+      "binyan_piel_count",
+      "binyan_piel_ratio",
+      "binyan_hifil_count",
+      "binyan_hifil_ratio",
+      "binyan_hitpael_count",
+      "binyan_hitpael_ratio",
+      "binyan_nifal_count",
+      "binyan_nifal_ratio",
+      "binyan_pual_count",
+      "binyan_pual_ratio",
+      "binyan_hufal_count",
+      "binyan_hufal_ratio"
+    ],
+    "morph_ratio_columns": [
+      "first_person_morph_ratio",
+      "second_person_morph_ratio",
+      "third_person_morph_ratio"
+    ],
+    "lemma_root_diversity_columns": [
+      "lemma_count",
+      "unique_lemma_count",
+      "lemma_diversity",
+      "root_count",
+      "unique_root_count",
+      "root_diversity"
+    ]
+  },
+  "top_20_mean_difference_features": [
+    {
+      "feature": "char_count",
+      "mean_difference": 316.93637055837564
+    },
+    {
+      "feature": "dicta_non_punct_token_count",
+      "mean_difference": 86.56961928934012
+    },
+    {
+      "feature": "dicta_token_count",
+      "mean_difference": 86.43855329949238
+    },
+    {
+      "feature": "lemma_count",
+      "mean_difference": 77.2517766497462
+    },
+    {
+      "feature": "word_count",
+      "mean_difference": 67.291269035533
+    },
+    {
+      "feature": "dicta_content_token_count",
+      "mean_difference": 35.54677664974619
+    },
+    {
+      "feature": "singular_count",
+      "mean_difference": 32.37159898477158
+    },
+    {
+      "feature": "masculine_count",
+      "mean_difference": 31.50360406091371
+    },
+    {
+      "feature": "unique_word_count",
+      "mean_difference": 23.08256345177665
+    },
+    {
+      "feature": "english_char_count",
+      "mean_difference": 18.29687817258883
+    },
+    {
+      "feature": "pos_pron_count",
+      "mean_difference": 15.98842639593909
+    },
+    {
+      "feature": "pos_verb_count",
+      "mean_difference": 15.807944162436549
+    },
+    {
+      "feature": "feminine_count",
+      "mean_difference": 15.435532994923854
+    },
+    {
+      "feature": "repeated_words_count",
+      "mean_difference": 15.36984771573604
+    },
+    {
+      "feature": "second_person_morph_count",
+      "mean_difference": 15.275583756345178
+    },
+    {
+      "feature": "unique_lemma_count",
+      "mean_difference": 14.81411167512691
+    },
+    {
+      "feature": "first_person_morph_count",
+      "mean_difference": 14.11030456852792
+    },
+    {
+      "feature": "root_count",
+      "mean_difference": 14.084873096446703
+    },
+    {
+      "feature": "pos_adp_count",
+      "mean_difference": 13.034086294416241
+    },
+    {
+      "feature": "line_count",
+      "mean_difference": 11.758350253807105
+    }
+  ],
+  "top_20_eta_squared_features": [
+    {
+      "feature": "repeated_words_count",
+      "eta_squared": 0.24433531193951324
+    },
+    {
+      "feature": "repeated_lines_count",
+      "eta_squared": 0.17468671458291227
+    },
+    {
+      "feature": "second_person_morph_count",
+      "eta_squared": 0.16642173913646907
+    },
+    {
+      "feature": "word_count",
+      "eta_squared": 0.16492030212127323
+    },
+    {
+      "feature": "second_person_count",
+      "eta_squared": 0.15809143721461283
+    },
+    {
+      "feature": "pos_adv_count",
+      "eta_squared": 0.1534798838672196
+    },
+    {
+      "feature": "lemma_diversity",
+      "eta_squared": 0.15068412111167676
+    },
+    {
+      "feature": "char_count",
+      "eta_squared": 0.1481738186700007
+    },
+    {
+      "feature": "pos_pron_count",
+      "eta_squared": 0.1481075675402163
+    },
+    {
+      "feature": "dicta_non_punct_token_count",
+      "eta_squared": 0.14218436941947923
+    },
+    {
+      "feature": "pos_verb_count",
+      "eta_squared": 0.14130241330004056
+    },
+    {
+      "feature": "pos_sconj_count",
+      "eta_squared": 0.13764709291734903
+    },
+    {
+      "feature": "line_count",
+      "eta_squared": 0.13461188725988
+    },
+    {
+      "feature": "lemma_count",
+      "eta_squared": 0.13328726885244588
+    },
+    {
+      "feature": "first_person_morph_count",
+      "eta_squared": 0.1280287636105423
+    },
+    {
+      "feature": "repeated_lines_ratio",
+      "eta_squared": 0.12581659233660375
+    },
+    {
+      "feature": "root_count",
+      "eta_squared": 0.1243847806442423
+    },
+    {
+      "feature": "chorus_repetition_score",
+      "eta_squared": 0.12335053468162277
+    },
+    {
+      "feature": "lexical_diversity",
+      "eta_squared": 0.12266206271529954
+    },
+    {
+      "feature": "repetition_ratio",
+      "eta_squared": 0.12266206271529953
+    }
+  ],
+  "top_high_correlation_pairs": [
+    {
+      "feature_1": "lexical_diversity",
+      "feature_2": "repetition_ratio",
+      "correlation": -0.9999999999999999,
+      "abs_correlation": 0.9999999999999999
+    },
+    {
+      "feature_1": "dicta_unknown_token_ratio",
+      "feature_2": "dicta_x_pos_ratio",
+      "correlation": 0.9936340912895061,
+      "abs_correlation": 0.9936340912895061
+    },
+    {
+      "feature_1": "dicta_token_count",
+      "feature_2": "dicta_non_punct_token_count",
+      "correlation": 0.9929377610752547,
+      "abs_correlation": 0.9929377610752547
+    },
+    {
+      "feature_1": "dicta_unknown_token_count",
+      "feature_2": "dicta_x_pos_count",
+      "correlation": 0.9928664767459575,
+      "abs_correlation": 0.9928664767459575
+    },
+    {
+      "feature_1": "word_count",
+      "feature_2": "char_count",
+      "correlation": 0.9902272577894523,
+      "abs_correlation": 0.9902272577894523
+    },
+    {
+      "feature_1": "char_count",
+      "feature_2": "dicta_non_punct_token_count",
+      "correlation": 0.9868102109579218,
+      "abs_correlation": 0.9868102109579218
+    },
+    {
+      "feature_1": "word_count",
+      "feature_2": "dicta_non_punct_token_count",
+      "correlation": 0.9829337741376599,
+      "abs_correlation": 0.9829337741376599
+    },
+    {
+      "feature_1": "char_count",
+      "feature_2": "dicta_token_count",
+      "correlation": 0.9809580066761359,
+      "abs_correlation": 0.9809580066761359
+    },
+    {
+      "feature_1": "repeated_lines_ratio",
+      "feature_2": "chorus_repetition_score",
+      "correlation": 0.9788394899127658,
+      "abs_correlation": 0.9788394899127658
+    },
+    {
+      "feature_1": "dicta_non_punct_token_count",
+      "feature_2": "lemma_count",
+      "correlation": 0.9746216175937592,
+      "abs_correlation": 0.9746216175937592
+    },
+    {
+      "feature_1": "word_count",
+      "feature_2": "dicta_token_count",
+      "correlation": 0.9715785286097891,
+      "abs_correlation": 0.9715785286097891
+    },
+    {
+      "feature_1": "unique_word_count",
+      "feature_2": "unique_lemma_count",
+      "correlation": 0.9706272427755652,
+      "abs_correlation": 0.9706272427755652
+    },
+    {
+      "feature_1": "root_count",
+      "feature_2": "pos_verb_count",
+      "correlation": 0.9651236795869564,
+      "abs_correlation": 0.9651236795869564
+    },
+    {
+      "feature_1": "unique_lines_count",
+      "feature_2": "last_word_unique_count",
+      "correlation": 0.9636520419271282,
+      "abs_correlation": 0.9636520419271282
+    },
+    {
+      "feature_1": "dicta_content_token_count",
+      "feature_2": "lemma_count",
+      "correlation": 0.9626256325819352,
+      "abs_correlation": 0.9626256325819352
+    },
+    {
+      "feature_1": "avg_words_per_line",
+      "feature_2": "median_words_per_line",
+      "correlation": 0.9590986131867862,
+      "abs_correlation": 0.9590986131867862
+    },
+    {
+      "feature_1": "dicta_token_count",
+      "feature_2": "lemma_count",
+      "correlation": 0.9551944361952271,
+      "abs_correlation": 0.9551944361952271
+    },
+    {
+      "feature_1": "word_count",
+      "feature_2": "lemma_count",
+      "correlation": 0.9549640763553794,
+      "abs_correlation": 0.9549640763553794
+    },
+    {
+      "feature_1": "char_count",
+      "feature_2": "lemma_count",
+      "correlation": 0.9514551520247981,
+      "abs_correlation": 0.9514551520247981
+    }
+  ],
+  "generated_files": {
+    "means_by_decade_csv": "outputs\\dicta_enriched_feature_means_by_decade.csv",
+    "top_mean_difference_csv": "outputs\\dicta_enriched_top_decade_separating_features.csv",
+    "eta_squared_csv": "outputs\\dicta_enriched_feature_eta_squared.csv",
+    "correlation_matrix_csv": "outputs\\dicta_enriched_feature_correlation_matrix.csv",
+    "summary_json": "outputs\\dicta_enriched_analysis_summary.json",
+    "figure_directory": "outputs\\figures_dicta",
+    "figure_files": [
+      "outputs\\figures_dicta\\avg_pos_noun_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_pos_verb_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_pos_pron_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_tense_past_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_tense_future_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_masculine_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_feminine_ratio_by_decade.png",
+      "outputs\\figures_dicta\\avg_lemma_diversity_by_decade.png",
+      "outputs\\figures_dicta\\avg_root_diversity_by_decade.png",
+      "outputs\\figures_dicta\\avg_dicta_unknown_token_ratio_by_decade.png"
+    ]
+  }
+}
