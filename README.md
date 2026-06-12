@@ -361,3 +361,92 @@ Baseline: Majority class = 33.5%, Random = 33.3%
 5. **Most valuable Dicta features**: morphology (+4.9%) and POS (+3.7%)
 6. **Combined numeric + TF-IDF hurts** (60%) vs pure TF-IDF (65.5%)
 
+
+## 10. Remaining Work
+
+Completed:
+
+1. ~~Run classification experiments~~ Done
+2. ~~Compare feature groups~~ Done
+3. ~~Compare models~~ Done
+4. ~~Analyze confusion matrices~~ Done
+5. ~~Identify which decade is easiest/hardest to classify~~ Done
+
+Remaining:
+
+6. Perform error analysis on misclassified songs.
+7. Test model performance with and without suspicious technical features (`english_char_count`, `parenthesis_count`, `digit_count`).
+8. Hyperparameter tuning for top models.
+9. Add LLM-based analysis: LLM as feature extractor and LLM as direct classifier.
+10. Compare classical ML results to LLM/AI results.
+11. Add literature review.
+12. Write final research report.
+
+## 11. LLM / AI Extension Plan
+
+The project should also include an AI-based approach.
+
+### A. LLM as feature extractor
+
+For each song, provide only the lyrics and ask the LLM to output structured JSON features such as:
+
+- `main_theme`
+- `emotional_tone`
+- `nostalgia_level`
+- `romantic_theme_level`
+- `military_or_national_theme_level`
+- `party_or_dance_energy`
+- `poetic_language_level`
+- `slang_or_spoken_language_level`
+- `personal_confession_level`
+- `direct_address_level`
+- `social_or_historical_context_level`
+
+These features can then be merged into the feature table and tested with the same ML models.
+
+### B. LLM as direct classifier
+
+Provide only the lyrics, without song name, artist, or year, and ask the LLM to classify the song as `1980s`, `2000s`, or `2020s` based on style. Then compare its accuracy and mistakes against the classical ML models.
+
+Important leakage rule:
+
+Never give the LLM `song_name`, `artist_name`, year, or `decade` when testing classification, because that would create data leakage.
+
+## 12. Repository Structure
+
+```text
+.
+|-- README.md
+|-- .gitignore
+|-- requirements.txt
+|-- israeli_songs_corpus.csv
+|-- build_full_feature_table.py
+|-- analyze_feature_table.py
+|-- add_dicta_features.py
+|-- analyze_dicta_enriched_table.py
+|-- run_classification_experiments.py      <-- NEW
+|-- classifier.py                          (deprecated)
+|-- classifier_balanced_set.py             (deprecated)
+|-- classifier_full_set.py                 (deprecated)
+|-- [Hebrew project PDF]
+|-- notebooks/
+|   |-- song_decade_classification_experiments.ipynb   <-- NEW
+|-- DictaAnalysis/
+|   |-- dicta_analysis_code.ipynb
+|   |-- data analysis.docx
+|   |-- dicta-80s/
+|   |-- dicta-00s/
+|   |-- dicta-20s/
+|   |-- dicta-output/
+|-- outputs/
+|   |-- song_feature_table.csv
+|   |-- song_feature_table_with_dicta.csv
+|   |-- classification_results_all.csv     <-- NEW
+|   |-- classification_summary.json        <-- NEW
+|   |-- feature_means_by_decade.csv
+|   |-- top_decade_separating_features.csv
+|   |-- feature_correlation_matrix.csv
+|   |-- dicta_enriched_*.csv
+|   |-- figures/
+|   |-- figures_dicta/
+```
