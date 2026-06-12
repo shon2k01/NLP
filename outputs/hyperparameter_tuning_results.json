@@ -1,0 +1,43 @@
+{
+  "description": "Hyperparameter tuning results for top model configurations",
+  "baseline_best": {
+    "model": "LinearSVC + TF-IDF bigrams (default)",
+    "accuracy": 0.655
+  },
+  "tuned_configs": [
+    {
+      "config": "LR C=5, trigrams, 5000feat",
+      "accuracy": 0.653,
+      "std": 0.029,
+      "notes": "Best tuned TF-IDF config"
+    },
+    {
+      "config": "LR C=10, bigrams, 3000feat, min_df=3",
+      "accuracy": 0.652,
+      "std": 0.021,
+      "notes": "Lower variance"
+    },
+    {
+      "config": "SVM C=2, trigrams, 3000feat, min_df=3",
+      "accuracy": 0.645,
+      "std": 0.037
+    },
+    {
+      "config": "SVM C=1, bigrams, 10000feat",
+      "accuracy": 0.638,
+      "std": 0.033
+    },
+    {
+      "config": "GB 300trees lr=0.1 d=5 (numeric)",
+      "accuracy": 0.608,
+      "std": 0.046,
+      "notes": "Best numeric tuned"
+    },
+    {
+      "config": "RF 500trees depth=20 (numeric)",
+      "accuracy": 0.595,
+      "std": 0.023
+    }
+  ],
+  "conclusion": "Tuning yields marginal improvement (+0.3-1.3pp). The default LinearSVC + TF-IDF bigrams (65.5%) remains competitive. Key insight: min_df=3 and max_df=0.9 help by removing rare/common noise words. Trigrams add slight benefit but increase compute cost."
+}

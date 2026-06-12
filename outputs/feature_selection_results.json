@@ -1,0 +1,156 @@
+{
+  "description": "Feature selection analysis using SelectKBest (ANOVA F-statistic) with Logistic Regression",
+  "accuracy_vs_k": [
+    {
+      "k": 5,
+      "accuracy": 0.531
+    },
+    {
+      "k": 10,
+      "accuracy": 0.514
+    },
+    {
+      "k": 15,
+      "accuracy": 0.556
+    },
+    {
+      "k": 20,
+      "accuracy": 0.565
+    },
+    {
+      "k": 30,
+      "accuracy": 0.588
+    },
+    {
+      "k": 40,
+      "accuracy": 0.581
+    },
+    {
+      "k": 50,
+      "accuracy": 0.601
+    },
+    {
+      "k": 60,
+      "accuracy": 0.595
+    },
+    {
+      "k": 80,
+      "accuracy": 0.613
+    },
+    {
+      "k": 100,
+      "accuracy": 0.605
+    },
+    {
+      "k": 132,
+      "accuracy": 0.601
+    }
+  ],
+  "optimal_k": 80,
+  "optimal_accuracy": 0.613,
+  "all_features_accuracy": 0.601,
+  "improvement_over_all": "+1.2pp",
+  "top_20_features_by_f_statistic": [
+    {
+      "rank": 1,
+      "feature": "repeated_words_count",
+      "f_score": 96.0
+    },
+    {
+      "rank": 2,
+      "feature": "repeated_lines_count",
+      "f_score": 62.9
+    },
+    {
+      "rank": 3,
+      "feature": "second_person_morph_count",
+      "f_score": 59.3
+    },
+    {
+      "rank": 4,
+      "feature": "word_count",
+      "f_score": 58.7
+    },
+    {
+      "rank": 5,
+      "feature": "second_person_count",
+      "f_score": 55.8
+    },
+    {
+      "rank": 6,
+      "feature": "pos_adv_count",
+      "f_score": 53.8
+    },
+    {
+      "rank": 7,
+      "feature": "lemma_diversity",
+      "f_score": 52.7
+    },
+    {
+      "rank": 8,
+      "feature": "char_count",
+      "f_score": 51.7
+    },
+    {
+      "rank": 9,
+      "feature": "pos_pron_count",
+      "f_score": 51.6
+    },
+    {
+      "rank": 10,
+      "feature": "dicta_non_punct_token_count",
+      "f_score": 49.2
+    },
+    {
+      "rank": 11,
+      "feature": "pos_verb_count",
+      "f_score": 48.9
+    },
+    {
+      "rank": 12,
+      "feature": "pos_sconj_count",
+      "f_score": 47.4
+    },
+    {
+      "rank": 13,
+      "feature": "line_count",
+      "f_score": 46.2
+    },
+    {
+      "rank": 14,
+      "feature": "lemma_count",
+      "f_score": 45.7
+    },
+    {
+      "rank": 15,
+      "feature": "first_person_morph_count",
+      "f_score": 43.6
+    },
+    {
+      "rank": 16,
+      "feature": "repeated_lines_ratio",
+      "f_score": 42.7
+    },
+    {
+      "rank": 17,
+      "feature": "root_count",
+      "f_score": 42.2
+    },
+    {
+      "rank": 18,
+      "feature": "chorus_repetition_score",
+      "f_score": 41.8
+    },
+    {
+      "rank": 19,
+      "feature": "lexical_diversity",
+      "f_score": 41.5
+    },
+    {
+      "rank": 20,
+      "feature": "repetition_ratio",
+      "f_score": 41.5
+    }
+  ],
+  "conclusion": "K=80 features achieves 61.3% (better than all 132 features at 60.1%). Removing weak features reduces noise. Top signal comes from repetition patterns, second-person language, and Dicta morphological counts. The feature selection confirms that ~40% of features can be dropped without loss."
+}

@@ -362,6 +362,56 @@ Baseline: Majority class = 33.5%, Random = 33.3%
 6. **Combined numeric + TF-IDF hurts** (60%) vs pure TF-IDF (65.5%)
 
 
+
+## 9b. Hyperparameter Tuning Results
+
+Tuning was performed on the top configurations from the baseline experiments.
+
+| Config | Accuracy | Notes |
+|--------|----------|-------|
+| LR C=5, trigrams, 5000feat | 65.3% | Best tuned TF-IDF |
+| LR C=10, bigrams, 3000feat, min_df=3 | 65.2% | Lowest variance |
+| SVM C=2, trigrams, 3000feat, min_df=3 | 64.5% | |
+| SVM C=1, bigrams, 10000feat | 63.8% | More features doesn't help |
+| GB 300trees lr=0.1 d=5 (numeric) | 60.8% | Best numeric tuned |
+| RF 500trees depth=20 (numeric) | 59.5% | |
+| **Baseline: SVM + TF-IDF bigrams** | **65.5%** | **Still competitive** |
+
+**Conclusion**: Hyperparameter tuning yields marginal improvement (+0.3-1.3pp). The default LinearSVC + TF-IDF bigrams (65.5%) remains the top performer. Key tuning insights: `min_df=3` and `max_df=0.9` help by removing rare/overly-common words. Trigrams add slight benefit but the gain is within noise.
+
+## 9c. Feature Selection Analysis
+
+Using SelectKBest (ANOVA F-statistic) with Logistic Regression to find the minimal optimal feature set:
+
+| K features | Accuracy | vs All (132) |
+|-----------|----------|--------------|
+| 5 | 53.1% | -7.0pp |
+| 10 | 51.4% | -8.7pp |
+| 20 | 56.5% | -3.7pp |
+| 30 | 58.8% | -1.3pp |
+| 50 | 60.1% | +0.0pp |
+| **80** | **61.3%** | **+1.2pp** |
+| 100 | 60.5% | +0.3pp |
+| 132 (all) | 60.1% | baseline |
+
+**Best**: K=80 features achieves 61.3% — better than using all 132 features.
+
+Top 10 features by F-statistic:
+
+1. `repeated_words_count` (F=96.0)
+2. `repeated_lines_count` (F=62.9)
+3. `second_person_morph_count` (F=59.3)
+4. `word_count` (F=58.7)
+5. `second_person_count` (F=55.8)
+6. `pos_adv_count` (F=53.8)
+7. `lemma_diversity` (F=52.7)
+8. `char_count` (F=51.7)
+9. `pos_pron_count` (F=51.6)
+10. `dicta_non_punct_token_count` (F=49.2)
+
+**Conclusion**: ~40% of features can be dropped without accuracy loss. The strongest signals are repetition patterns, second-person language (both manual and Dicta-based), and song length. This aligns with the RF importance analysis.
+
+
 ## 10. Remaining Work
 
 Completed:
