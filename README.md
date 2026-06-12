@@ -308,266 +308,56 @@ Current research interpretation:
 - Some features may reflect data-source artifacts, so model experiments should include versions with and without suspicious technical features.
 - Manual semantic lexicons are useful but currently sparse; some lexicons such as `old_israeli_words_ratio` should likely be expanded or treated as experimental.
 
-## 9. Planned Classification Experiments
+## 9. Classification Experiments - Results
 
-Planned script:
+Script: `run_classification_experiments.py`
 
-- `run_classification_experiments.py`
+### Setup
 
-The script should:
+- Evaluation: 5-fold stratified cross-validation
+- Total experiments: 80 (12 feature groups x 6-7 models)
+- Random state: 42
 
-- Load `outputs/song_feature_table_with_dicta.csv`.
-- Load `israeli_songs_corpus.csv` to recover lyrics.
-- Merge lyrics into the enriched feature table.
-- Use lyrics only inside TF-IDF pipelines.
-- Avoid using `song_name` and `artist_name` as predictive features.
-- Remove constant/all-zero columns.
-- Run a stratified train/test split.
-- Run 5-fold stratified cross-validation.
-- Save results and confusion matrices.
+### Top 10 Results
 
-Feature groups to compare:
+| Rank | Accuracy | Macro F1 | Model | Feature Group |
+|------|----------|----------|-------|---------------|
+| 1 | **65.5%** | 65.1% | Linear SVM | TF-IDF bigrams |
+| 2 | 64.5% | 64.3% | Logistic Regression | TF-IDF bigrams |
+| 3 | 64.3% | 63.8% | Logistic Regression | TF-IDF unigrams |
+| 4 | 63.7% | 63.2% | Linear SVM | TF-IDF unigrams |
+| 5 | 63.2% | 63.3% | Multinomial NB | TF-IDF bigrams |
+| 6 | 61.1% | 60.0% | Multinomial NB | TF-IDF unigrams |
+| 7 | 60.5% | 60.2% | Gradient Boosting | Reduced numeric (124) |
+| 8 | 60.0% | 59.8% | Logistic Regression | Numeric + TF-IDF |
+| 9 | 59.8% | 59.7% | Logistic Regression | All numeric (132) |
+| 10 | 59.6% | 59.5% | Logistic Regression | Reduced numeric (124) |
 
-- `basic_surface_features`
-- `repetition_features`
-- `pronoun_person_features`
-- `semantic_lexicon_features`
-- `dicta_pos_features`
-- `dicta_morphology_features`
-- `dicta_lemma_root_features`
-- `dicta_unknown_features`
-- `all_numeric_features`
-- `reduced_non_redundant_numeric_features`
-- `tfidf_unigrams`
-- `tfidf_unigrams_bigrams`
-- `numeric + tfidf_unigrams_bigrams`
+Baseline: Majority class = 33.5%, Random = 33.3%
 
-Models to compare:
+### Per-Decade Difficulty
 
-- Majority class baseline
-- Stratified random baseline
-- Logistic Regression
-- LinearSVC / Linear SVM
-- Random Forest
-- Gradient Boosting, optional
-- Multinomial Naive Bayes for TF-IDF
+| Decade | Recall | Interpretation |
+|--------|--------|----------------|
+| 2020s | 75-82% | Easiest - distinct modern style |
+| 1980s | 60-80% | Medium - recognizable |
+| 2000s | 33-48% | Hardest - transitional decade |
 
-Why these models were selected:
+### Top Features (Random Forest Importance)
 
-- Baselines provide a minimum reference point.
-- Logistic Regression is a strong, interpretable NLP baseline.
-- LinearSVC is commonly strong for sparse text classification.
-- Random Forest captures non-linear relationships between numeric features.
-- Gradient Boosting can work well on tabular numeric features.
-- Multinomial Naive Bayes is a classic fast baseline for TF-IDF text features.
+1. `punctuation_ratio` (0.022)
+2. `repeated_words_count` (0.021)
+3. `pos_sconj_ratio` (0.017)
+4. `char_count` / `word_count` (0.015-0.016)
+5. `second_person_count` (0.015)
+6. `chorus_repetition_score` (0.015)
 
-Evaluation metrics:
+### Key Findings
 
-- Accuracy
-- Macro-F1
-- Weighted-F1
-- Per-class precision, recall, F1
-- Confusion matrix
+1. **TF-IDF bigrams dominate** - actual words classify better than numeric features
+2. **Bigrams > unigrams** (+2% avg) - word pairs carry decade-specific patterns
+3. **2020s most distinct**, 2000s hardest (transitional decade)
+4. **Best numeric-only**: Gradient Boosting + reduced features (60.5%)
+5. **Most valuable Dicta features**: morphology (+4.9%) and POS (+3.7%)
+6. **Combined numeric + TF-IDF hurts** (60%) vs pure TF-IDF (65.5%)
 
-Macro-F1 matters because the classes are nearly balanced, but Macro-F1 still evaluates performance across all decades equally and prevents the model from looking good only because it performs well on one class.
-
-## 10. Remaining Work
-
-Remaining tasks:
-
-1. Run classification experiments.
-2. Compare feature groups.
-3. Compare models.
-4. Analyze confusion matrices.
-5. Identify which decade is easiest/hardest to classify.
-6. Perform error analysis on misclassified songs.
-7. Test model performance with and without suspicious technical features.
-8. Test reduced non-redundant feature sets.
-9. Add LLM-based analysis: LLM as feature extractor and LLM as direct classifier.
-10. Compare classical ML results to LLM/AI results.
-11. Add literature review: stylometry, authorship attribution, text classification, TF-IDF and n-grams, Hebrew NLP, morphological analysis, and LLM-based text classification/style analysis.
-12. Write final research report.
-
-## 11. LLM / AI Extension Plan
-
-The project should also include an AI-based approach.
-
-### A. LLM as feature extractor
-
-For each song, provide only the lyrics and ask the LLM to output structured JSON features such as:
-
-- `main_theme`
-- `emotional_tone`
-- `nostalgia_level`
-- `romantic_theme_level`
-- `military_or_national_theme_level`
-- `party_or_dance_energy`
-- `poetic_language_level`
-- `slang_or_spoken_language_level`
-- `personal_confession_level`
-- `direct_address_level`
-- `social_or_historical_context_level`
-
-These features can then be merged into the feature table and tested with the same ML models.
-
-### B. LLM as direct classifier
-
-Provide only the lyrics, without song name, artist, or year, and ask the LLM to classify the song as `1980s`, `2000s`, or `2020s` based on style. Then compare its accuracy and mistakes against the classical ML models.
-
-Important leakage rule:
-
-Never give the LLM `song_name`, `artist_name`, year, or `decade` when testing classification, because that would create data leakage.
-
-## 12. Repository Structure
-
-Current repository structure:
-
-```text
-.
-|-- README.md
-|-- .gitignore
-|-- requirements.txt
-|-- israeli_songs_corpus.csv
-|-- build_full_feature_table.py
-|-- analyze_feature_table.py
-|-- add_dicta_features.py
-|-- analyze_dicta_enriched_table.py
-|-- classifier.py
-|-- classifier_balanced_set.py
-|-- classifier_full_set.py
-|-- [Hebrew project PDF]
-|-- DictaAnalysis/
-|   |-- dicta_analysis_code.ipynb
-|   |-- data analysis.docx
-|   |-- dicta-80s/
-|   |   |-- dicta_all_1980s.ud.txt
-|   |   |-- dicta_all_1980s.bgu.csv
-|   |-- dicta-00s/
-|   |   |-- dicta_all_2000s.ud.txt
-|   |   |-- dicta_all_2000s.bgu.csv
-|   |-- dicta-20s/
-|   |   |-- dicta_all_2020s.ud.txt
-|   |   |-- dicta_all_2020s.bgu.csv
-|   |-- dicta-output/
-|   |   |-- stage2_basic_summary_by_decade.csv
-|   |   |-- stage2_final_summary_table.csv
-|   |   |-- pronoun_summary_by_decade.csv
-|   |   |-- dicta_morph_features_by_decade.csv
-|   |   |-- dicta_selected_morphology_by_decade.csv
-|   |   |-- dicta_top_lemmas_by_decade.csv
-|   |   |-- dicta_top_roots_by_decade.csv
-|   |   |-- topic_distribution_by_decade.csv
-|   |   |-- topic_examples_top_songs.csv
-|   |   |-- dicta_balanced_sample_150.csv
-|-- outputs/
-|   |-- song_feature_table.csv
-|   |-- feature_table_summary.json
-|   |-- feature_means_by_decade.csv
-|   |-- top_decade_separating_features.csv
-|   |-- feature_correlation_matrix.csv
-|   |-- song_feature_table_with_dicta.csv
-|   |-- dicta_feature_summary.json
-|   |-- dicta_unmatched_feature_table_songs.csv
-|   |-- dicta_unmatched_dicta_songs.csv
-|   |-- dicta_enriched_feature_means_by_decade.csv
-|   |-- dicta_enriched_top_decade_separating_features.csv
-|   |-- dicta_enriched_feature_eta_squared.csv
-|   |-- dicta_enriched_feature_correlation_matrix.csv
-|   |-- dicta_enriched_analysis_summary.json
-|   |-- figures/
-|   |-- figures_dicta/
-```
-
-Notes on structure:
-
-- The `DictaAnalysis/` directory contains earlier notebook-based analysis and Dicta-generated inputs/outputs.
-- The current production-style scripts live in the repository root.
-- Generated project outputs are currently kept under `outputs/`.
-- The three `classifier*.py` files are currently empty placeholders from an earlier stage.
-- No files were moved during repository cleanup, so existing script paths remain valid.
-
-Generated outputs:
-
-- Everything under `outputs/` is generated by the root analysis scripts.
-- `DictaAnalysis/dicta-output/` contains generated or intermediate Dicta-analysis outputs from the earlier notebook workflow.
-- `DictaAnalysis/dicta-*/dicta_all_*.bgu.csv` and `DictaAnalysis/dicta-*/dicta_all_*.ud.txt` are Dicta analysis files used as inputs for the enrichment script.
-
-## 13. How to Reproduce
-
-Install dependencies:
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-Run the current pipeline from the repository root:
-
-```bash
-python build_full_feature_table.py
-python analyze_feature_table.py
-python add_dicta_features.py
-python analyze_dicta_enriched_table.py
-```
-
-Future classification step:
-
-```bash
-python run_classification_experiments.py
-```
-
-Expected key outputs:
-
-- `outputs/song_feature_table.csv`
-- `outputs/song_feature_table_with_dicta.csv`
-- `outputs/feature_table_summary.json`
-- `outputs/dicta_feature_summary.json`
-- `outputs/dicta_enriched_analysis_summary.json`
-- Exploratory figures under `outputs/figures/` and `outputs/figures_dicta/`
-
-## 14. Notes on Data Leakage
-
-Strict leakage rules:
-
-- Do not use `song_name` as a feature.
-- Do not use `artist_name` as a feature.
-- Do not use `decade` or year except as the target label.
-- For TF-IDF, fit the vectorizer only on the training fold.
-- For scaling, fit the scaler only on the training fold.
-- For LLM classification, provide only the lyrics.
-
-Potential leakage or confounding risks:
-
-- Some artists may appear multiple times, creating artist-style effects.
-- Source formatting artifacts may correlate with decade.
-- Song title and artist information must not enter text-model prompts or feature vectors.
-
-## 15. Notes for Final Report
-
-The final research report should include:
-
-- Dataset description
-- Feature extraction methodology
-- Dicta analysis methodology
-- Exploratory results
-- Model results
-- Error analysis
-- LLM comparison
-- Limitations
-- Conclusions
-
-Known limitations:
-
-- Corpus size is moderate, not huge.
-- 2020s has 197 songs rather than exactly 200.
-- Lyrics may contain source-format artifacts.
-- Some features are correlated.
-- Some semantic lexicons are sparse.
-- Artist effects may bias results if the same artist appears multiple times.
-- Decade labels may reflect release/popularity date rather than purely linguistic style.
-- Dicta's Hebrew morphology encoding must be interpreted carefully; for example, present-tense verbal forms may appear as participles rather than `Tense=Pres`.
-
-## 16. Git and Data Notes
-
-The repository currently keeps the corpus, generated feature tables, Dicta files, figures, PDF, DOCX, and notebook in version control. This is useful for reproducibility at the current project size. If the project grows or moves to a public repository with strict storage limits, consider using Git LFS or a data-release workflow for larger raw/generated artifacts.
-
-Before publishing publicly, verify copyright and redistribution permissions for the lyrics corpus and any generated song-level artifacts derived from it.

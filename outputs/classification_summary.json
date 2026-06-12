@@ -1,0 +1,47 @@
+{
+  "dataset": {
+    "n_songs": 597,
+    "n_features": 132,
+    "decades": {
+      "1980s": 200,
+      "2000s": 200,
+      "2020s": 197
+    }
+  },
+  "evaluation": {
+    "method": "5-fold stratified cross-validation",
+    "random_state": 42,
+    "total_experiments": 80
+  },
+  "best_model": {
+    "model": "Linear SVM",
+    "features": "tfidf_bigrams",
+    "accuracy": 0.655,
+    "macro_f1": 0.651
+  },
+  "per_decade_difficulty": {
+    "easiest": "2020s (75-82% recall)",
+    "medium": "1980s (60-80% recall)",
+    "hardest": "2000s (33-48% recall)"
+  },
+  "top_features_rf_importance": [
+    "punctuation_ratio",
+    "repeated_words_count",
+    "pos_sconj_ratio",
+    "char_count",
+    "word_count",
+    "second_person_count",
+    "chorus_repetition_score",
+    "pos_sconj_count",
+    "dicta_non_punct_token_count",
+    "second_person_morph_count"
+  ],
+  "key_findings": [
+    "TF-IDF bigrams + Linear SVM achieves best accuracy (65.5%)",
+    "Bigrams outperform unigrams (+2% avg across models)",
+    "2020s most distinct; 2000s transitional and hardest to classify",
+    "Best numeric-only: Gradient Boosting + reduced features (60.5%)",
+    "Most valuable additive groups: dicta_morphology (+4.9%), dicta_pos (+3.7%)",
+    "Combined numeric + TF-IDF underperforms pure TF-IDF"
+  ]
+}
