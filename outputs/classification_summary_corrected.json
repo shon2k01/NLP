@@ -1,0 +1,236 @@
+{
+  "dataset": {
+    "n_songs": 597,
+    "decades": {
+      "1980s": 200,
+      "2000s": 200,
+      "2020s": 197
+    },
+    "numeric_features_before_constant_removal": 134,
+    "numeric_features_after_constant_removal": 132,
+    "removed_constant_or_all_zero_columns": [
+      "tense_present_count",
+      "tense_present_ratio"
+    ]
+  },
+  "evaluation": {
+    "method": "5-fold StratifiedKFold cross-validation",
+    "shuffle": true,
+    "random_state": 42,
+    "metrics": [
+      "accuracy",
+      "macro_f1"
+    ],
+    "total_experiments": 80,
+    "leakage_correction": [
+      "TF-IDF vectorizers are inside sklearn Pipeline.",
+      "StandardScaler is inside sklearn Pipeline.",
+      "Combined numeric + TF-IDF experiments use ColumnTransformer.",
+      "No full-dataset fit_transform is applied before cross-validation."
+    ]
+  },
+  "old_best_result": {
+    "feature_group": "tfidf_bigrams",
+    "model": "Linear SVM",
+    "accuracy": 0.6549,
+    "macro_f1": 0.6513
+  },
+  "corrected_best_by_accuracy": {
+    "feature_group": "tfidf_bigrams",
+    "model": "Linear SVM",
+    "accuracy": 0.6331512605042017,
+    "macro_f1": 0.6271135018246551
+  },
+  "corrected_best_by_macro_f1": {
+    "feature_group": "tfidf_bigrams",
+    "model": "Linear SVM",
+    "accuracy": 0.6331512605042017,
+    "macro_f1": 0.6271135018246551
+  },
+  "difference_old_minus_corrected_best_accuracy": 0.021748739495798364,
+  "difference_old_minus_corrected_best_macro_f1": 0.024186498175344906,
+  "top_10_by_accuracy": [
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.6331512605042017,
+      "Acc Std": 0.030233537722070613,
+      "Macro F1": 0.6271135018246551,
+      "F1 Std": 0.024418927466032362,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_unigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.6298459383753501,
+      "Acc Std": 0.027700177998000633,
+      "Macro F1": 0.6229481213522647,
+      "F1 Std": 0.030199357376190224,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.6264705882352941,
+      "Acc Std": 0.012256222417856455,
+      "Macro F1": 0.6224356736777721,
+      "F1 Std": 0.01089240359274834,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_unigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.6248039215686274,
+      "Acc Std": 0.027489197658086533,
+      "Macro F1": 0.6176664651682451,
+      "F1 Std": 0.023000026758854365,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Multinomial NB",
+      "Accuracy": 0.609733893557423,
+      "Acc Std": 0.02375483916216051,
+      "Macro F1": 0.606786922616045,
+      "F1 Std": 0.026561562445360842,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "reduced_non_redundant",
+      "Model": "Gradient Boosting",
+      "Accuracy": 0.6046218487394958,
+      "Acc Std": 0.056275618250325184,
+      "Macro F1": 0.601785170070333,
+      "F1 Std": 0.05994875021061301,
+      "N Features": 124
+    },
+    {
+      "Feature Group": "numeric+tfidf_bigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.5996218487394958,
+      "Acc Std": 0.0282704252122007,
+      "Macro F1": 0.5976502728019806,
+      "F1 Std": 0.029541511695022653,
+      "N Features": 5132
+    },
+    {
+      "Feature Group": "all_numeric",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5980252100840336,
+      "Acc Std": 0.036640390059933664,
+      "Macro F1": 0.5967045583958869,
+      "F1 Std": 0.03620389087388868,
+      "N Features": 132
+    },
+    {
+      "Feature Group": "numeric+tfidf_bigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5963865546218488,
+      "Acc Std": 0.04150239727523987,
+      "Macro F1": 0.5946351002023957,
+      "F1 Std": 0.04171545749131672,
+      "N Features": 5132
+    },
+    {
+      "Feature Group": "reduced_non_redundant",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5963585434173668,
+      "Acc Std": 0.03269967712415824,
+      "Macro F1": 0.5952477409342741,
+      "F1 Std": 0.03248427712338976,
+      "N Features": 124
+    }
+  ],
+  "top_10_by_macro_f1": [
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.6331512605042017,
+      "Acc Std": 0.030233537722070613,
+      "Macro F1": 0.6271135018246551,
+      "F1 Std": 0.024418927466032362,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_unigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.6298459383753501,
+      "Acc Std": 0.027700177998000633,
+      "Macro F1": 0.6229481213522647,
+      "F1 Std": 0.030199357376190224,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.6264705882352941,
+      "Acc Std": 0.012256222417856455,
+      "Macro F1": 0.6224356736777721,
+      "F1 Std": 0.01089240359274834,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_unigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.6248039215686274,
+      "Acc Std": 0.027489197658086533,
+      "Macro F1": 0.6176664651682451,
+      "F1 Std": 0.023000026758854365,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "tfidf_bigrams",
+      "Model": "Multinomial NB",
+      "Accuracy": 0.609733893557423,
+      "Acc Std": 0.02375483916216051,
+      "Macro F1": 0.606786922616045,
+      "F1 Std": 0.026561562445360842,
+      "N Features": 5000
+    },
+    {
+      "Feature Group": "reduced_non_redundant",
+      "Model": "Gradient Boosting",
+      "Accuracy": 0.6046218487394958,
+      "Acc Std": 0.056275618250325184,
+      "Macro F1": 0.601785170070333,
+      "F1 Std": 0.05994875021061301,
+      "N Features": 124
+    },
+    {
+      "Feature Group": "numeric+tfidf_bigrams",
+      "Model": "Linear SVM",
+      "Accuracy": 0.5996218487394958,
+      "Acc Std": 0.0282704252122007,
+      "Macro F1": 0.5976502728019806,
+      "F1 Std": 0.029541511695022653,
+      "N Features": 5132
+    },
+    {
+      "Feature Group": "all_numeric",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5980252100840336,
+      "Acc Std": 0.036640390059933664,
+      "Macro F1": 0.5967045583958869,
+      "F1 Std": 0.03620389087388868,
+      "N Features": 132
+    },
+    {
+      "Feature Group": "reduced_non_redundant",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5963585434173668,
+      "Acc Std": 0.03269967712415824,
+      "Macro F1": 0.5952477409342741,
+      "F1 Std": 0.03248427712338976,
+      "N Features": 124
+    },
+    {
+      "Feature Group": "numeric+tfidf_bigrams",
+      "Model": "Logistic Regression",
+      "Accuracy": 0.5963865546218488,
+      "Acc Std": 0.04150239727523987,
+      "Macro F1": 0.5946351002023957,
+      "F1 Std": 0.04171545749131672,
+      "N Features": 5132
+    }
+  ]
+}

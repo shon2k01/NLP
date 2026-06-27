@@ -362,6 +362,54 @@ Baseline: Majority class = 33.5%, Random = 33.3%
 6. **Combined numeric + TF-IDF hurts** (60%) vs pure TF-IDF (65.5%)
 
 
+## 9a. Corrected Classification Experiment
+
+Script: `run_classification_experiments_corrected.py`
+
+Outputs:
+
+- `outputs/classification_results_corrected.csv`
+- `outputs/classification_summary_corrected.json`
+
+This experiment is a methodological correction and validation step for the first classification experiment. The original experiment remains documented above because it is useful as the first modeling pass, but its TF-IDF evaluations had a possible data leakage issue: `TfidfVectorizer` was fit on the full dataset before cross-validation. In the combined numeric + TF-IDF setup, numeric scaling was also fit before cross-validation.
+
+The corrected script fixes this by putting all learned preprocessing inside scikit-learn objects that are passed directly to `cross_validate`:
+
+- Text-only experiments use `Pipeline(TfidfVectorizer, classifier)`.
+- Numeric-only Logistic Regression and Linear SVM use `Pipeline(SimpleImputer, StandardScaler, classifier)`.
+- Combined numeric + TF-IDF experiments use `ColumnTransformer`, with numeric columns scaled in one branch and lyrics vectorized with TF-IDF in the other branch.
+- No `fit_transform` is applied to the full dataset before cross-validation.
+
+Corrected evaluation setup:
+
+- Evaluation: 5-fold `StratifiedKFold`
+- Shuffle: `True`
+- Random state: 42
+- Metrics: accuracy and macro-F1
+- Total experiments: 80
+- Removed constant/all-zero columns: `tense_present_count`, `tense_present_ratio`
+
+### Old vs Corrected Best Result
+
+| Version | Feature Group | Model | Accuracy | Macro-F1 |
+|---------|---------------|-------|----------|----------|
+| Old first experiment | `tfidf_bigrams` | Linear SVM | 0.6549 | 0.6513 |
+| Corrected experiment | `tfidf_bigrams` | Linear SVM | 0.6332 | 0.6271 |
+
+Difference:
+
+- Accuracy drop: 0.0217
+- Macro-F1 drop: 0.0242
+
+Interpretation:
+
+- The corrected results confirm that the previous experiment was slightly optimistic.
+- The drop is meaningful but not catastrophic.
+- The best model remains TF-IDF bigrams + Linear SVM.
+- This suggests that word-pair patterns are still the strongest signal.
+- However, the corrected result is not strong enough for us to consider the research question fully solved.
+- Therefore, the next stage is to expand the dataset and rerun the experiment using the corrected evaluation pipeline.
+
 
 ## 9b. Hyperparameter Tuning Results
 
@@ -421,16 +469,20 @@ Completed:
 3. ~~Compare models~~ Done
 4. ~~Analyze confusion matrices~~ Done
 5. ~~Identify which decade is easiest/hardest to classify~~ Done
+6. ~~Correct evaluation leakage by moving TF-IDF and scaling into Pipeline / ColumnTransformer~~ Done
 
 Remaining:
 
-6. Perform error analysis on misclassified songs.
-7. Test model performance with and without suspicious technical features (`english_char_count`, `parenthesis_count`, `digit_count`).
-8. Hyperparameter tuning for top models.
-9. Add LLM-based analysis: LLM as feature extractor and LLM as direct classifier.
-10. Compare classical ML results to LLM/AI results.
-11. Add literature review.
-12. Write final research report.
+7. Expand the dataset beyond the current 597 songs.
+8. Rerun corrected experiments on the expanded dataset.
+9. Optionally add DictaBERT / newer Dicta analyzer features after the expanded dataset is ready.
+10. Perform error analysis on misclassified songs.
+11. Test model performance with and without suspicious technical features (`english_char_count`, `parenthesis_count`, `digit_count`).
+12. Re-run or extend hyperparameter tuning using the corrected evaluation pipeline.
+13. Add LLM-based analysis: LLM as feature extractor and LLM as direct classifier.
+14. Compare classical ML results to LLM/AI results.
+15. Add literature review.
+16. Write final research report.
 
 ## 11. LLM / AI Extension Plan
 
@@ -475,6 +527,7 @@ Never give the LLM `song_name`, `artist_name`, year, or `decade` when testing cl
 |-- add_dicta_features.py
 |-- analyze_dicta_enriched_table.py
 |-- run_classification_experiments.py      <-- NEW
+|-- run_classification_experiments_corrected.py
 |-- classifier.py                          (deprecated)
 |-- classifier_balanced_set.py             (deprecated)
 |-- classifier_full_set.py                 (deprecated)
@@ -493,6 +546,8 @@ Never give the LLM `song_name`, `artist_name`, year, or `decade` when testing cl
 |   |-- song_feature_table_with_dicta.csv
 |   |-- classification_results_all.csv     <-- NEW
 |   |-- classification_summary.json        <-- NEW
+|   |-- classification_results_corrected.csv
+|   |-- classification_summary_corrected.json
 |   |-- feature_means_by_decade.csv
 |   |-- top_decade_separating_features.csv
 |   |-- feature_correlation_matrix.csv
